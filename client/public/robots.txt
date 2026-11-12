@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# After deployment, replace the placeholder below with:
+# Sitemap: https://YOUR-BACKEND.onrender.com/api/sitemap.xml

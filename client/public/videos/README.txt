@@ -1,0 +1,1 @@
+Place your licensed home hero background video here as home-background.mp4, then set VITE_HERO_VIDEO_URL=/videos/home-background.mp4 in client/.env. The video should be compressed, muted-friendly, and ideally 10–25 seconds long so it can loop smoothly.

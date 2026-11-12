@@ -1,0 +1,21 @@
+# Dependencies and generated builds
+node_modules/
+dist/
+coverage/
+
+# Environment secrets (keep example templates)
+.env
+.env.*
+!.env.example
+client/.env
+client/.env.*
+!client/.env.example
+server/.env
+server/.env.*
+!server/.env.example
+
+# Local uploads and logs
+server/uploads/*
+!server/uploads/.gitkeep
+*.log
+.DS_Store
