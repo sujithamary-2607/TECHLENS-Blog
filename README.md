@@ -1,139 +1,396 @@
-# TECH LENS Journal — MERN Stack Technology Blog
+# TechLens | Modern Technology Blog Platform
 
-A responsive full-stack technology publication built with MongoDB, Express, React and Node.js. The existing Midnight Ember visual design is retained.
+<p align="center">
+  <strong>Explore Technology. Discover Ideas. Stay Informed.</strong>
+</p>
 
-## Project structure
+<p align="center">
+  A modern, responsive, and dynamic blogging platform built to explore, publish, and manage technology-related content.
+</p>
 
-- `client/` — React + Vite website and admin interface
-- `server/` — Express API, MongoDB models, authentication and seed script
-- `render.yaml` — Render Blueprint for frontend and backend
-- `.env.example` files — safe configuration templates (no real secrets)
+<p align="center">
+  <a href="https://techlens-frontend.onrender.com">Live Website</a> •
+  <a href="https://techlens-frontend.onrender.com/admin">Admin Dashboard</a> •
+  <a href="https://github.com/sujithamary-2607/TECHLENS-Blog">Source Code</a>
+</p>
 
-## Requirements
+---
 
-- Node.js 20+ (Node 22 recommended)
-- npm
-- MongoDB Community Server running locally, or a MongoDB Atlas database
-- VS Code (recommended)
+## About the Project
 
-## Run locally on Windows
+**TechLens** is a full-stack technology blogging platform developed to make technology knowledge more accessible, engaging, and convenient.
 
-### 1. Configure the database
+In a rapidly evolving digital world, staying informed about emerging technologies, software development, artificial intelligence, cybersecurity, and other innovations is increasingly important. TechLens provides a centralized platform where readers can explore informative articles, discover new ideas, and gain practical knowledge from technology-related content.
 
-For local MongoDB, start the MongoDB service. MongoDB Compass can connect using:
+The application combines a modern React-based frontend with a Node.js and Express backend, supported by MongoDB for data storage.
 
-`mongodb://127.0.0.1:27017`
+TechLens also provides a dedicated administration interface that allows authorized administrators to manage blog content and maintain the platform.
 
-The app uses database `technova_blog`.
+The primary focus of this project is to deliver a smooth reading experience, organized content discovery, and convenient content management through a responsive web application.
 
-### 2. Configure the backend
+## Project Objectives
 
-Open a terminal in the project root:
+The main objectives of TechLens are:
 
-```powershell
-cd server
-Copy-Item .env.example .env
+- To develop a centralized platform for technology-related articles and knowledge sharing.
+- To provide users with an attractive and easy-to-navigate reading experience.
+- To organize articles into relevant technology topics and categories.
+- To provide an administrative interface for managing blog content.
+- To implement secure authentication and backend API communication.
+- To develop a responsive application that works across different screen sizes.
+- To demonstrate the integration of frontend, backend, and database technologies in a full-stack application.
+- To deploy the application using cloud-based hosting services.
+
+## Key Features
+
+### 1. Modern Homepage
+
+- Attractive landing page with a modern visual layout.
+- Introduction to the TechLens platform.
+- Organized sections for discovering technology content.
+- Responsive design for different devices.
+- Easy navigation between important sections.
+
+### 2. Explore Articles
+
+- Dedicated article discovery section.
+- Browse available technology articles.
+- Discover content across different topics.
+- Organized article presentation.
+- Easy navigation from article listings to individual articles.
+
+### 3. Article Reading Experience
+
+- Dedicated page for individual articles.
+- Display complete article information and content.
+- Structured reading layout.
+- Clear navigation between the article listing and article details.
+
+### 4. Admin Dashboard
+
+- Dedicated administrator sign-in page.
+- Authentication-based access to administrative features.
+- Centralized content management interface.
+- Tools for managing blog articles.
+- Administrative control over publishing and maintaining content.
+
+### 5. Content Management
+
+- Create and manage blog articles.
+- Organize content for publication.
+- Maintain article information.
+- Manage published content through the administrative interface.
+
+### 6. Responsive User Interface
+
+- Responsive page layouts.
+- Consistent visual presentation.
+- User-friendly navigation.
+- Adaptation to desktop, tablet, and mobile screens.
+- Modern styling and interactive interface elements.
+
+## Technology Stack
+
+TechLens is developed using the MERN technology stack.
+
+| Technology | Purpose |
+|---|---|
+| MongoDB | Database management and storage |
+| Express.js | Backend web framework and API development |
+| React.js | Frontend user interface |
+| Node.js | Server-side JavaScript runtime |
+| JavaScript | Application logic and interactivity |
+| HTML5 | Web page structure |
+| CSS3 | Styling and responsive layouts |
+| npm | Dependency and package management |
+| Render | Cloud application deployment |
+| MongoDB Atlas | Cloud database hosting |
+| Git and GitHub | Version control and source code management |
+
+## System Architecture
+
+TechLens follows a client-server architecture in which the frontend, backend, and database communicate to provide the application's functionality.
+
+```text
+              USER
+                |
+                v
+        REACT FRONTEND
+                |
+                | HTTP Requests
+                v
+       NODE.JS + EXPRESS API
+                |
+                | Database Queries
+                v
+          MONGODB ATLAS
+                |
+                v
+         STORED DATA
+                |
+                v
+       API RESPONSE TO CLIENT
+                |
+                v
+        DISPLAYED CONTENT
 ```
 
-Open `server/.env` and set `MONGODB_URI`, a random `JWT_SECRET` of at least 32 characters, `CLIENT_URL`, `ADMIN_EMAIL`, and `ADMIN_PASSWORD`. Do not commit `.env`.
+### Frontend Layer
 
-Install and seed once:
+The frontend is developed using React.js, HTML, CSS, and JavaScript.
 
-```powershell
+It is responsible for:
+- Displaying the website interface.
+- Rendering article listings and article details.
+- Providing navigation between pages.
+- Communicating with backend APIs.
+- Displaying information received from the server.
+
+### Backend Layer
+
+The backend is developed using Node.js and Express.js.
+
+It is responsible for:
+- Handling incoming API requests.
+- Managing application routes.
+- Processing authentication requests.
+- Managing article-related operations.
+- Communicating with the database.
+- Returning responses to the frontend.
+
+### Database Layer
+
+MongoDB is used to store and manage application data.
+
+MongoDB Atlas provides cloud-hosted database services, allowing the deployed backend to access stored information remotely.
+
+## Application Structure
+
+The repository is organized into separate frontend and backend directories.
+
+```text
+TECHLENS-Blog/
+│
+├── client/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── .env.example
+│
+├── server/
+│   ├── src/
+│   │   └── seed.js
+│   │
+│   ├── package.json
+│   └── .env.example
+│
+├── render.yaml
+├── .gitignore
+└── README.md
+```
+
+*Note: The structure above illustrates the main application organization. Individual files and folders may vary depending on the implementation.*
+
+## Installation and Setup
+
+Follow the instructions below to run TechLens locally.
+
+### Prerequisites
+
+Install the following before starting:
+
+- Node.js
+- npm
+- Git
+- MongoDB Atlas account or a local MongoDB installation
+- A code editor such as Visual Studio Code
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/sujithamary-2607/TECHLENS-Blog.git
+```
+
+Navigate into the project:
+
+```bash
+cd TECHLENS-Blog
+```
+
+### Step 2: Configure the Backend
+
+Navigate to the server directory:
+
+```bash
+cd server
+```
+
+Install dependencies:
+
+```bash
 npm install
+```
+
+Create a `.env` file inside the server directory.
+
+Add the following configuration:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+ADMIN_NAME=Blog Administrator
+ADMIN_EMAIL=your_admin_email
+ADMIN_PASSWORD=your_admin_password
+```
+
+Replace the placeholder values with your own configuration.
+
+### Step 3: Initialize the Database
+
+Run the seed command:
+
+```bash
 npm run seed
 ```
 
-The seed command creates the initial admin account only if it does not exist and adds sample content. To intentionally reset an existing admin password, set `RESET_ADMIN_PASSWORD=true` in `server/.env` and run `npm run seed` once; then remove or set it to false.
+This initializes the database using the project's seed script.
 
-Start the API:
+### Step 4: Configure the Frontend
 
-```powershell
-npm run dev
-```
+Open a new terminal and navigate to the client directory:
 
-The API runs at `http://localhost:5055`. Health check: `http://localhost:5055/api/health`.
-
-### 3. Configure and run the frontend
-
-Open a second terminal from the project root:
-
-```powershell
+```bash
 cd client
-Copy-Item .env.example .env
 ```
 
-Set `VITE_API_URL=http://localhost:5055/api` in `client/.env`, then:
+Install the frontend dependencies:
 
-```powershell
+```bash
 npm install
+```
+
+Create a `.env` file inside the client directory:
+
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+### Step 5: Start the Backend Server
+
+From the server directory, execute:
+
+```bash
+npm start
+```
+
+The backend will start using the configured server port.
+
+### Step 6: Start the Frontend Application
+
+From the client directory, execute:
+
+```bash
 npm run dev
 ```
 
-Open `http://localhost:5173`.
+Open the local development URL displayed in the terminal.
 
-### 4. Admin login
+## Live Deployment
 
-Open `http://localhost:5173/admin` and use the email and password you configured in `server/.env`. The public repository does not publish a shared default password.
+TechLens is deployed using Render and uses MongoDB Atlas for cloud database management.
 
-## Google Analytics 4 and Search Console
+| Component | Deployment |
+|---|---|
+| Frontend | Render Static Site |
+| Backend | Render Web Service |
+| Database | MongoDB Atlas |
+| Source Code | GitHub |
 
-The integration is optional and disabled until you provide your own IDs.
+### Live Application Links
 
-1. Create a GA4 web data stream and copy its Measurement ID (format: `G-XXXXXXXXXX`).
-2. Add it as `VITE_GA_MEASUREMENT_ID` in `client/.env`.
-3. In Google Search Console, choose URL-prefix verification and copy the HTML tag verification content value.
-4. Add only the content value (not the whole meta tag) as `VITE_GOOGLE_SITE_VERIFICATION` in `client/.env`.
-5. Restart the Vite server locally. For deployment, set these values in the Render frontend environment and redeploy.
+**Main Website:**  
+https://techlens-frontend.onrender.com
 
-The app sends a page-view event when the React route changes. Analytics cannot collect data until your real Measurement ID is configured. Search Console verification must be completed against your actual deployed domain.
+**Admin Dashboard:**  
+https://techlens-frontend.onrender.com/admin
 
-## GitHub safety and sharing
+**GitHub Repository:**  
+https://github.com/sujithamary-2607/TECHLENS-Blog
 
-Safe to commit:
-- Application source code
-- `README.md`, `render.yaml`
-- `.env.example` templates
-- `package-lock.json` files generated by `npm install`
+## Security and Configuration
 
-Never commit:
-- `.env` files
-- MongoDB connection strings containing usernames/passwords
-- JWT secrets, admin passwords, Cloudinary API secrets
-- `node_modules`, build output or private uploads
+Security and configuration management are important parts of the application.
 
-The root `.gitignore` excludes environment files and local uploads. Before pushing, inspect the GitHub changes list and confirm that no `.env` file is included.
+The project uses environment variables to keep sensitive configuration separate from source code.
 
-Someone cloning the repository should copy each `.env.example` to `.env`, supply their own database and secret values, then follow the local setup steps above. They do not need your credentials.
+Important practices include:
 
-## Deploy to Render using GitHub
+- Store database connection strings in environment variables.
+- Keep authentication secrets private.
+- Never commit `.env` files to GitHub.
+- Use `.env.example` to document required configuration.
+- Restrict administrative access through authentication.
+- Avoid exposing database credentials in public repositories.
 
-This repository includes `render.yaml` for a Render Blueprint.
+## Benefits of TechLens
 
-1. Push the project to GitHub. Include the generated `client/package-lock.json` and `server/package-lock.json` if available.
-2. Create a MongoDB Atlas database and database user. Copy its application connection string and replace the password placeholder. Configure Atlas network access so Render can reach the database; use a strong database password.
-3. Sign in to Render with GitHub and choose **New → Blueprint**. Select this repository and let Render read `render.yaml`.
-4. Render asks for values marked `sync: false`. Enter:
-   - Backend `MONGODB_URI`: your Atlas connection string
-   - Backend `CLIENT_URL`: the exact frontend URL Render creates (for example `https://techlens-frontend.onrender.com`)
-   - Backend `ADMIN_EMAIL` and `ADMIN_PASSWORD`: your chosen production admin credentials
-   - Frontend `VITE_API_URL`: the backend URL plus `/api` (for example `https://techlens-api.onrender.com/api`)
-   - Frontend Google IDs: leave blank until you create your properties
-5. Deploy the services. If you enter the frontend/backend URLs after the first service creation, save the environment variables and redeploy both services.
-6. Create the production admin account by running `npm run seed` from the `server` folder on your computer with the production Atlas `MONGODB_URI`, `ADMIN_EMAIL`, `ADMIN_PASSWORD` and a strong `JWT_SECRET` set in that terminal's environment (or use Render Shell if available). Run it once. Do not run the seed command on every deployment.
-7. Test the API health URL, public website, article pages, admin login, image upload and direct page refreshes.
-8. After deployment, update `client/public/robots.txt` with the backend sitemap URL and redeploy the frontend. Submit the frontend URL-prefix property in Search Console and complete verification.
+- **Centralized Knowledge:** Provides a single platform for accessing technology-related articles.
+- **Easy Content Discovery:** Helps readers explore different technology topics.
+- **Efficient Management:** Provides administrators with a dedicated content management interface.
+- **Responsive Experience:** Supports access from different screen sizes.
+- **Full-Stack Implementation:** Demonstrates practical integration of frontend, backend, and database technologies.
+- **Cloud Accessibility:** Makes the application accessible through a deployed web interface.
 
-Important: Render free web services can sleep when idle and have temporary local storage. This project currently stores uploaded images on the backend's local disk; for durable production image storage, configure Cloudinary or another object-storage provider before relying on uploads. The in-process scheduled-post task also won't run while a free service is asleep. These are free-tier limitations, not local-development blockers.
+## Future Enhancements
 
-## Troubleshooting
+The following improvements could be introduced in future versions:
 
-- Backend cannot connect: check MongoDB is running and `MONGODB_URI` is correct.
-- Login fails: confirm the admin was seeded into the same database the backend uses.
-- Frontend says it cannot reach the API: check `VITE_API_URL` and ensure the backend is running.
-- CORS error after deployment: `CLIENT_URL` must exactly match the frontend origin, including `https://` and without an extra path.
-- If dependencies change, run `npm install` in both `server` and `client`, then commit the updated lockfiles.
+- Advanced article search and filtering.
+- Reader registration and personalized accounts.
+- Article bookmarking and reading history.
+- Comments and user engagement features.
+- Article recommendation functionality.
+- Newsletter subscription.
+- Enhanced analytics for administrators.
+- Improved content categorization.
+- Social media sharing integration.
+- Additional accessibility improvements.
 
-## Security note
+## Learning Outcomes
 
-The included local ZIP may contain demo-only local credentials for convenience. Treat that ZIP as private. Use separate strong credentials for any public deployment. Never publish real passwords or API secrets in source control.
+Developing TechLens provides practical experience in:
+
+- Full-stack web application development.
+- React component-based architecture.
+- REST API development using Express.js.
+- Backend programming with Node.js.
+- Database integration using MongoDB.
+- Authentication and environment configuration.
+- Frontend and backend integration.
+- GitHub repository management.
+- Cloud deployment using Render.
+- Debugging and application testing.
+
+## Conclusion
+
+TechLens demonstrates how modern web technologies can be integrated to create a functional, responsive, and content-driven blogging platform.
+
+By combining an engaging frontend, structured backend services, and cloud-based database storage, the project provides a foundation for publishing and exploring technology knowledge.
+
+The platform aims to make technology content easier to discover while providing administrators with convenient tools to maintain and manage articles.
+
+---
+
+<p align="center">
+  <strong>TECHLENS</strong>
+  <br/>
+  Explore Technology. Discover Ideas. Stay Informed.
+  <br/><br/>
+  Built with passion for technology and knowledge sharing.
+</p>
