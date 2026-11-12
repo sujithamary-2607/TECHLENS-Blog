@@ -1,4 +1,6 @@
+<p align="center">
 # TechLens | Modern Technology Blog Platform
+</p>
 
 <p align="center">
   <strong>Explore Technology. Discover Ideas. Stay Informed.</strong>
